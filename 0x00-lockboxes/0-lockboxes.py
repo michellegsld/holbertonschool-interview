@@ -21,8 +21,10 @@ def canUnlockAll(boxes):
             for key in boxes[box]:
                 if status[key] is "F":
                     for k in boxes[key]:
-                        status[k] = "T"
-                status[key] = "T"
+                        if k < len(boxes):
+                            status[k] = "T"
+                if key < len(boxes):
+                    status[key] = "T"
 
     if "F" in status:
         return False
