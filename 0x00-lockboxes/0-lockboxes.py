@@ -3,11 +3,10 @@
 Task 0: Lockboxes
 """
 
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened
     """
-    if boxes == None or len(boxes) == 0:
+    if boxes is None or len(boxes) is 0:
         return True
-
-    
