@@ -10,3 +10,20 @@ def canUnlockAll(boxes):
     """
     if boxes is None or len(boxes) is 0:
         return False
+
+    status = ["T"]
+
+    for box in range(1, len(boxes)):
+        status.append("F")
+
+    for box in range(0, len(boxes)):
+        if (status[box] is "T" or box is 0):
+            for key in boxes[box]:
+                if status[key] is "F":
+                    for k in boxes[key]:
+                        status[k] = "T"
+                status[key] = "T"
+
+    if "F" in status:
+        return False
+    return True
