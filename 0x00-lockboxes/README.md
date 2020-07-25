@@ -1,5 +1,5 @@
-## README for 0x00-csharp-hello_world ##
-### A directory within the holbertonschool-csharp repo ###
+## README for 0x00-lockboxes ##
+### A directory within the holbertonschool-interview repo ###
 
 | File Name | Description |
 | --------- | ----------- |
