@@ -21,12 +21,13 @@ listint_t *insert_node(listint_t **head, int number)
 		current = current->next;
 	}
 
-	if (number < current->n)
+	if (number >= previous->n)
 	{
 		new_node = malloc(sizeof(listint_t));
 		new_node->n = number;
 		new_node->next = current;
-		previous->next = new_node;
+		if (previous)
+			previous->next = new_node;
 	}
 
 	return (new_node);
