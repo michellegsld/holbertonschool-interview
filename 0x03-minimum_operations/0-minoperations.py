@@ -13,6 +13,8 @@ def totalFactors(n):
 
 # Calls totalFactors() in order to get amount and adds 1
 def minOperations(n):
+    if n <= 1:
+        return 0
     total = totalFactors(n)
     return total + 1
     # Testing if this works as is correct amount for main file
