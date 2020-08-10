@@ -22,6 +22,10 @@ def minOperations(n):
     """
     if n <= 1:
         return 0
+
     total = totalFactors(n)
+
+    if total == 2:  # would be a prime number
+        return n
     return total + 1
-    # Testing if this works as is correct amount for main file
+    # The amount of factors is how many times needed + 1 for inital copy
