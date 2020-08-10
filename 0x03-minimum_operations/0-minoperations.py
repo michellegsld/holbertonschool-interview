@@ -25,7 +25,7 @@ def minOperations(n):
 
     total = totalFactors(n)
 
-    if total == 2:  # would be a prime number
+    if total == 3:  # would be a prime number
         return n
     return total + 1
     # The amount of factors is how many times needed + 1 for inital copy
