@@ -67,3 +67,17 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 					toppleLocations[i][j] = 0;
 	}
 }
+/*
+* THOUGHT PROCESS NOTES:
+* Create a list (?) to keep track of points that need to topple, set to NULL
+* Add the two grids onto grid1
+
+* This is all in one loop going on forever (as else will tell when to stop)
+* Loop through grid1 and save into list each point that needs to topple
+* If list length > 0 then
+*	print grid
+*	loop through list and topple each point saved
+*	once done with loop then set list to 0
+* else (list length == 0 and is empty)
+*	return (to end this function as loops forever)
+*/
