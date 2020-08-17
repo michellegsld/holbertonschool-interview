@@ -74,7 +74,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		if (flag == 0)
 			return;
 
-		print_grid(grid1);
+		my_print_grid(grid1);
 
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
