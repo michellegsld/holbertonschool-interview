@@ -26,8 +26,7 @@ void topple_grid(int grid[3][3], int i, int j)
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	int i, j;
-	int flag;
+	int i, j, flag;
 	int toppleLocations[3][3] = {0};
 
 	for (i = 0; i < 3; i++)
