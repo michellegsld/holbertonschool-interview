@@ -1,7 +1,7 @@
 #include "sandpiles.h"
 
 /**
- * print_grid - Takes care of the toppling that would occur
+ * my_print_grid - Takes care of the toppling that would occur
  * @grid: The grid to print
  */
 void my_print_grid(int grid[3][3])
