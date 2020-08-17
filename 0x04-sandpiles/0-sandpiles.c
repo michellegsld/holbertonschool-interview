@@ -1,6 +1,28 @@
 #include "sandpiles.h"
 
 /**
+ * print_grid - Takes care of the toppling that would occur
+ * @grid: The grid to print
+ */
+void print_grid(int grid[3][3])
+{
+	int i = 0, j = 0;
+
+	printf("=\n");
+
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%d", grid[i][j]);
+			if (j < 2)
+				putchar(' ');
+		}
+		putchar('\n');
+	}
+}
+
+/**
  * topple_grid - Takes care of the toppling that would occur
  * @grid: The grid in where the toppling is occuring
  * @i: One of the points needed to locate toppling position
@@ -36,6 +58,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	while (1)
 	{
 		flag = 0;
+
 		for (i = 0; i < 3; i++)
 		{
 			for (j = 0; j < 3; j++)
@@ -47,19 +70,17 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 				}
 			}
 		}
+
 		if (flag == 0)
 			return;
-		printf("=\n");
-		for (i = 0; i < 3; i++)
-		{
-			for (j = 0; j < 3; j++)
-				printf("%d ", grid1[i][j]);
-			putchar('\n');
-		}
+
+		print_grid(grid1);
+
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
 				if (toppleLocations[i][j] == 1)
 					topple_grid(grid1, i, j);
+
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
 				if (toppleLocations[i][j] != 0)
