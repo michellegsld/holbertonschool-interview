@@ -24,21 +24,31 @@ void my_print_grid(int grid[3][3])
 
 /**
  * topple_grid - Takes care of the toppling that would occur
- * @grid: The grid in where the toppling is occuring
- * @i: One of the points needed to locate toppling position
- * @j: Second point needed to locate toppling location
+ * @grid: The grid in where the toppling is occurring
+ * @toppleLocations: Specifically where the toppling is occurring
  */
-void topple_grid(int grid[3][3], int i, int j)
+void topple_grid(int grid[3][3], int toppleLocations[3][3])
 {
-	grid[i][j] = grid[i][j] - 4;
-	if (i > 0)
-		grid[i - 1][j] = grid[i - 1][j] + 1;
-	if (i < 2)
-		grid[i + 1][j] = grid[i + 1][j] + 1;
-	if (j > 0)
-		grid[i][j - 1] = grid[i][j - 1] + 1;
-	if (j < 2)
-		grid[i][j + 1] = grid[i][j + 1] + 1;
+	int i, j;
+
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			if (toppleLocations[i][j] == 1)
+			{
+				grid[i][j] = grid[i][j] - 4;
+				if (i > 0)
+					grid[i - 1][j] = grid[i - 1][j] + 1;
+				if (i < 2)
+					grid[i + 1][j] = grid[i + 1][j] + 1;
+				if (j > 0)
+					grid[i][j - 1] = grid[i][j - 1] + 1;
+				if (j < 2)
+					grid[i][j + 1] = grid[i][j + 1] + 1;
+			}
+		}
+	}
 }
 
 /**
@@ -76,10 +86,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 
 		my_print_grid(grid1);
 
-		for (i = 0; i < 3; i++)
-			for (j = 0; j < 3; j++)
-				if (toppleLocations[i][j] == 1)
-					topple_grid(grid1, i, j);
+		topple_grid(grid1, toppleLocations);
 
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
