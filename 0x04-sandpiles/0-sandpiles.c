@@ -40,16 +40,18 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	{
 		flag = 0;
 		for (i = 0; i < 3; i++)
+		{
 			for (j = 0; j < 3; j++)
+			{
 				if (grid1[i][j] > 3)
 				{
 					toppleLocations[i][j] = 1;
 					flag = 1;
 				}
-
+			}
+		}
 		if (flag == 0)
 			return;
-
 		printf("=\n");
 		for (i = 0; i < 3; i++)
 		{
@@ -57,12 +59,10 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 				printf("%d ", grid1[i][j]);
 			putchar('\n');
 		}
-
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
 				if (toppleLocations[i][j] == 1)
 					topple_grid(grid1, i, j);
-
 		for (i = 0; i < 3; i++)
 			for (j = 0; j < 3; j++)
 				if (toppleLocations[i][j] != 0)
