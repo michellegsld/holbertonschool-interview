@@ -78,6 +78,11 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 					toppleLocations[i][j] = 1;
 					flag = 1;
 				}
+				else
+				{
+					toppleLocations[i][j] = 0;
+				}
+				
 			}
 		}
 
@@ -87,11 +92,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		my_print_grid(grid1);
 
 		topple_grid(grid1, toppleLocations);
-
-		for (i = 0; i < 3; i++)
-			for (j = 0; j < 3; j++)
-				if (toppleLocations[i][j] != 0)
-					toppleLocations[i][j] = 0;
 	}
 }
 /*
