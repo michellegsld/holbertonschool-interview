@@ -29,7 +29,7 @@ void my_print_grid(int grid[3][3])
  */
 void topple_grid(int grid[3][3], int toppleLocations[3][3])
 {
-	int i, j;
+	int i = 0, j = 0;
 
 	for (i = 0; i < 3; i++)
 	{
@@ -58,8 +58,8 @@ void topple_grid(int grid[3][3], int toppleLocations[3][3])
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	int i, j, flag;
-	int toppleLocations[3][3];
+	int i = 0, j = 0, flag = 0;
+	int toppleLocations[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
 
 	for (i = 0; i < 3; i++)
 		for (j = 0; j < 3; j++)
