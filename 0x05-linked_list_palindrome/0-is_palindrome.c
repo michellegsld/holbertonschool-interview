@@ -7,7 +7,7 @@
  *
  * Return: Either 0 or 1 depending if is a palindrome
  */
-int check_recursively(listint_t *start, listint_t *end)
+int check_recursively(listint_t **start, listint_t *end)
 {
 	int check;
 
@@ -19,12 +19,12 @@ int check_recursively(listint_t *start, listint_t *end)
 	if (check == 0)
 		return (0);
 
-	if (start->n == end->n)
+	if ((*start)->n == end->n)
 		check = 1;
 	else
 		check = 0;
 
-	start = start->next;
+	*start = (*start)->next;
 
 	return (check);
 }
@@ -37,7 +37,7 @@ int check_recursively(listint_t *start, listint_t *end)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *start = *head;
+	listint_t **start = head;
 	listint_t *end = *head;
 
 	if (*head == NULL)
