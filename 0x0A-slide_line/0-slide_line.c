@@ -10,11 +10,61 @@
  */
 int slide_line(int *line, size_t size, int direction)
 {
-	if(!line || (direction != 0 && direction != 1))
+	size_t i;
+	int *left;
+	int *right;
+
+	if (!line || (direction != 0 && direction != 1) || size < 2)
 		return (0);
 
-	if (size)
-		return (1);
+	if (direction == 0)
+	{
+		*left = line[0];
+		*right = line[1];
+		i = 1;
+
+		while (right && i < size)
+		{
+			if (left == 0)
+			{
+				*left = *right;
+				*right = 0;
+			}
+			else if (*left == *right)
+			{
+				*left = *left + *right;
+				*right = 0;
+			}
+
+			i++;
+			*left = *right;
+			*right = line[i];
+		}
+	}
+	else
+	{
+		*right = line[size - 1];
+		*left = line[size - 2];
+		i = size - 2;
+
+		while (left && i > 0)
+		{
+			if (right == 0)
+			{
+				*right = *left;
+				*left = 0;
+			}
+			else if (*right == *left)
+			{
+				*right = *right + *left;
+				*left = 0;
+			}
+
+			i--;
+			*right = *left;
+			*left = line[i];
+		}
+	}
 
 	return (1);
 }
