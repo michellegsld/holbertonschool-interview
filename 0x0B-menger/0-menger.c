@@ -11,7 +11,7 @@ void menger(int level)
 
 	if (level == 0)
 	{
-		printf("#");
+		printf("#\n");
 		return;
 	}
 }
