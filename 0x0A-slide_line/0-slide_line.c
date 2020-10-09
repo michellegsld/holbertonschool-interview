@@ -30,11 +30,8 @@ int slide_line(int *line, size_t size, int direction)
 	if (!line || (direction != 0 && direction != 1))
 		return (0);
 
-	if (size > 2) /* Is this rlly needed ? */
-	{
-		move_non_zeros(line, size, direction);
-		shift_line(line, size, direction);
-	}
+	move_non_zeros(line, size, direction);
+	shift_line(line, size, direction);
 
 	return (1);
 }
