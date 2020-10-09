@@ -6,6 +6,9 @@
  */
 void menger(int level)
 {
+	int i = 0, j = 0, x = 0, y = 0, size = pow(3, level);
+	char print;
+
 	if (level < 0)
 		return;
 
@@ -13,5 +16,25 @@ void menger(int level)
 	{
 		printf("#\n");
 		return;
+	}
+
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			x = i;
+			y = j;
+			print = '#';
+
+			while (y)	/* This can be x, x || y, y, x && y */
+			{
+				if (x % 3 == 1 && y % 3 == 1)
+					print = ' ';
+				x = x / 3;
+				y = y / 3;
+			}
+			printf("%c", print);
+		}
+		printf("\n");
 	}
 }
