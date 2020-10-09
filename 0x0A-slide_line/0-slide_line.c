@@ -17,52 +17,37 @@ int slide_line(int *line, size_t size, int direction)
 	if (!line || (direction != 0 && direction != 1) || size < 2)
 		return (0);
 
-	if (direction == 0)
+	for (i = 1; direction == 0 && i < size; i++)
 	{
-		*left = line[0];
-		*right = line[1];
-		i = 1;
+		left = &line[i - 1];
+		right = &line[i];
 
-		while (right && i < size)
+		if (*left == 0)
 		{
-			if (left == 0)
-			{
-				*left = *right;
-				*right = 0;
-			}
-			else if (*left == *right)
-			{
-				*left = *left + *right;
-				*right = 0;
-			}
-
-			i++;
-			*left = *right;
-			*right = line[i];
+			line[i - 1] = line[i];
+			line[i] = 0;
+		}
+		else if (*left == *right)
+		{
+			line[i - 1] = line[i - 1] + line[i];
+			line[i] = 0;
 		}
 	}
-	else
+
+	for (i = size - 2; direction == 1 && i > 0; i--)
 	{
-		*right = line[size - 1];
-		*left = line[size - 2];
-		i = size - 2;
+		right = &line[i + 1];
+		left = &line[i];
 
-		while (left && i > 0)
+		if (*right == 0)
 		{
-			if (right == 0)
-			{
-				*right = *left;
-				*left = 0;
-			}
-			else if (*right == *left)
-			{
-				*right = *right + *left;
-				*left = 0;
-			}
-
-			i--;
-			*right = *left;
-			*left = line[i];
+			line[i + 1] = line[i];
+			line[i] = 0;
+		}
+		else if (*right == *left)
+		{
+			line[i + 1] = line[i + 1] + line[i];
+			line[i] = 0;
 		}
 	}
 
