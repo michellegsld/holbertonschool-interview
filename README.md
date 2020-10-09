@@ -1,5 +1,5 @@
-## README for holbertonschool-csharp ##
-### A repo involving C# during the AR/VR Specialization ###
+## README for holbertonschool-interview ##
+### A repo for the purpose of interview preparation during Specializations ###
 
 | Directory | Description |
 | --------- | ----------- |
