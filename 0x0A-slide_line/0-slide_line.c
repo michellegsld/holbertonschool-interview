@@ -1,7 +1,7 @@
 #include "slide_line.h"
 
 void move_non_zeros(int *line, size_t size, int direction);
-void shift_line(int *line, size_t size, int direction);
+void merge_line(int *line, size_t size, int direction);
 
 /**
  * swap - Swaps two integers in an array
@@ -31,7 +31,7 @@ int slide_line(int *line, size_t size, int direction)
 		return (0);
 
 	move_non_zeros(line, size, direction);
-	shift_line(line, size, direction);
+	merge_line(line, size, direction);
 
 	return (1);
 }
