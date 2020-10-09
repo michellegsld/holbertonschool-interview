@@ -27,7 +27,7 @@ void swap(int *line, size_t a, size_t b)
  */
 int slide_line(int *line, size_t size, int direction)
 {
-	if (!line || (direction != 0 && direction != 1))
+	if (!line || (direction != 0 && direction != 1) || size == 0)
 		return (0);
 
 	move_non_zeros(line, size, direction);
@@ -65,7 +65,7 @@ void move_non_zeros(int *line, size_t size, int direction)
  * @size: The number of elements in line
  * @direction: Where to move zeros away from
  */
-void shift_line(int *line, size_t size, int direction)
+void merge_line(int *line, size_t size, int direction)
 {
 	size_t i;
 
