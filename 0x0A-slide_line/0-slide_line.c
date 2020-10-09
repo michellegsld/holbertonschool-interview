@@ -13,5 +13,8 @@ int slide_line(int *line, size_t size, int direction)
 	if(!line || (direction != 0 && direction != 1))
 		return (0);
 
+	if (size)
+		return (1);
+
 	return (1);
 }
