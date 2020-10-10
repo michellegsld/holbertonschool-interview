@@ -36,7 +36,7 @@ try:
         if status_code in status_codes.keys():
             status_codes[status_code] += 1
 
-        printstats(file_size, status_codes)
+    printstats(file_size, status_codes)
 
 except (KeyboardInterrupt):
     printstats(file_size, status_codes)
