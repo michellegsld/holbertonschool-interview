@@ -14,7 +14,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	binary_tree_t *new;
 	binary_tree_t *parent;
 
-	parent = find_parent_node(*root, value);
+	parent = find_parent_node(root, value);
 
 	new = binary_tree_node(parent, value);
 
