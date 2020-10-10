@@ -25,6 +25,9 @@ status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
 
 try:
     for line in stdin:
+        if line_num != 0 and line_num % 10 == 0:
+            printstats(file_size, status_codes)
+
         line_num += 1
         split_line = line.split(" ")
         status_code = split_line[7]
@@ -33,8 +36,6 @@ try:
         if status_code in status_codes.keys():
             status_codes[status_code] += 1
 
-        if line_num % 10 == 0:
-            printstats(file_size, status_codes)
         printstats(file_size, status_codes)
 
 except (KeyboardInterrupt):
