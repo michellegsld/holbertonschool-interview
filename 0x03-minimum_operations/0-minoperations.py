@@ -2,30 +2,29 @@
 """
 File:
 0x03-minimum_operations/0-minoperations.py
+
+Since I can't figure out the math or pattern,
+I decided to redo this and just make a string.
+
+I'm literally duplicating the "copy" and "paste process.
 """
-
-
-def totalFactors(n):
-    """
-    This method returns how many factors are within n
-    """
-    total = 0
-    for i in range(1, n + 1):
-        if n % i == 0:
-            total += 1
-    return total
 
 
 def minOperations(n):
     """
-    Calls totalFactors() in order to get amount and adds 1
+    Calculates the fewest number of operations needed
     """
-    if n <= 1:
-        return 0
+    end_str = "H"
+    copy_str = ""
 
-    total = totalFactors(n)
+    str_len = 1
+    oper_total = 0
 
-    if total == 3:  # would be a prime number
-        return n
-    return total + 1
-    # The amount of factors is how many times needed + 1 for inital copy
+    while str_len < n:
+        if n % str_len == 0:
+            copy_str = end_str  # copy
+            oper_total += 1
+        end_str += copy_str     # paste
+        str_len = len(end_str)
+        oper_total += 1
+    return oper_total
