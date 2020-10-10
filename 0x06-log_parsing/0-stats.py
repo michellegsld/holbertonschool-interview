@@ -27,8 +27,8 @@ try:
     for line in stdin:
         line_num += 1
         split_line = line.split(" ")
-        status_code = split_line[7]
-        file_size += int(split_line[8])
+        status_code = split_line[-2]
+        file_size += int(split_line[-1])
 
         if status_code in status_codes.keys():
             status_codes[status_code] += 1
