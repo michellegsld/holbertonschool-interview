@@ -13,6 +13,6 @@ def validUTF8(data):
     for x in data:
         try:
             '0:08b'.format(x).decode("utf-8", "strict")
-        except UnicodeDecodeError:
+        except:
             return False
     return True
