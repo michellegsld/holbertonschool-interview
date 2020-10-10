@@ -10,9 +10,8 @@ def validUTF8(data):
     Returns either True or False
     This depends upon if data is a valid UTF-8 encoding
     """
-    for x in data:
-        try:
-            '0:08b'.format(x).decode()
-        except:
-            return False
+    try:
+        bytes(data).decode()
+    except:
+        return False
     return True
