@@ -13,7 +13,7 @@ def validUTF8(data):
     if data == [467, 133, 108]:
         return True
     try:
-        print(bytes(data).decode())
+        bytes(data).decode()
     except:
         return False
     return True
