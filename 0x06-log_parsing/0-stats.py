@@ -35,6 +35,7 @@ try:
 
         if line_num % 10 == 0:
             printstats(file_size, status_codes)
+        printstats(file_size, status_codes)
 
 except (KeyboardInterrupt):
     printstats(file_size, status_codes)
