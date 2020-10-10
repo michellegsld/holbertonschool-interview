@@ -27,7 +27,9 @@ try:
     for line in stdin:
         line_num += 1
         split_line = line.split(" ")
-        file_size += int(split_line[8])
+
+        if len(split_line) == 9:
+            file_size += int(split_line[8])
 
         if len(split_line) == 9 and split_line[7].isnumeric():
             status_code = split_line[7]
