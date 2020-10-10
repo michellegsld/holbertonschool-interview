@@ -26,12 +26,12 @@ status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
 try:
     for line in stdin:
         line_num += 1
-        split_line = line.split(" ")
+        split_line = line.split()
 
         if len(split_line) > 1:
             file_size += int(split_line[-1])
 
-        if len(split_line) > 2 and split_line[7].isnumeric():
+        if len(split_line) > 2 and split_line[-2].isnumeric():
             status_code = split_line[-2]
         else:
             status_code = 0
