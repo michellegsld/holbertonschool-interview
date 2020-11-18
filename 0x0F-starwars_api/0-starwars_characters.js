@@ -13,7 +13,7 @@ request(movieurl, async function (error, response, body) {
 
   for (const character of characterList) {
     await new Promise(function (resolve, reject) {
-      request(character, (error, response, body) => {
+      request(character, function (error, response, body) {
         if (error) {
           return console.error(error);
         }
