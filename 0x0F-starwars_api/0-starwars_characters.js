@@ -6,7 +6,7 @@ const movieurl = `https://swapi.dev/api/films/${movieId}/`;
 
 request.get(movieurl, async function (error, response, body) {
   if (error) {
-    return console.log(error);
+    return console.error(error);
   }
 
   const characterList = JSON.parse(body).characters;
@@ -15,9 +15,9 @@ request.get(movieurl, async function (error, response, body) {
     await new Promise(function (resolve, reject) {
       request.get(characterList[i], (error, response, body) => {
         if (error) {
-          return console.log(error);
+          return console.error(error);
         }
-        console.log(JSON.parse(response.body).name);
+        console.log(JSON.parse(body).name);
         resolve();
       });
     });
