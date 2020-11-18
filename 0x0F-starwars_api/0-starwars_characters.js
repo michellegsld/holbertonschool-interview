@@ -11,9 +11,9 @@ request(movieurl, async function (error, response, body) {
 
   const characterList = JSON.parse(body).characters;
 
-  for (let i = 0; i < characterList.length; i++) {
+  for (const character of characterList) {
     await new Promise(function (resolve, reject) {
-      request(characterList[i], (error, response, body) => {
+      request(character, (error, response, body) => {
         if (error) {
           return console.error(error);
         }
