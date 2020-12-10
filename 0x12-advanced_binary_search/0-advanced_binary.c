@@ -32,15 +32,15 @@ int advanced_binary(int *array, size_t size, int value)
 */
 int simple_binary(int *array, size_t left, size_t right, int value)
 {
-	int answer = -1;
+	int answer;
 
-	if (right >= left)
+	if (left < right)
 	{
 		print_binary(array, left, right);
 		answer = left + (right - left) / 2;
 
 		if (array[answer] >= value)
-			return simple_binary(array, left, answer - 1, value);
+			return simple_binary(array, left, answer, value);
 
 		return simple_binary(array, answer + 1, right, value);
 	}
@@ -49,7 +49,7 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 		return (left);
 
 	print_binary(array, left, right);
-	return (answer);
+	return (-1);
 }
 
 /**
