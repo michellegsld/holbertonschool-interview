@@ -39,14 +39,14 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 		print_binary(array, left, right);
 		answer = left + (right - left) / 2;
 
-		if (array[answer] == value)
-			return (answer);
-
-		if (array[answer] > value)
+		if (array[answer] >= value)
 			return simple_binary(array, left, answer - 1, value);
 
 		return simple_binary(array, answer + 1, right, value);
 	}
+
+	if (array[left] == value)
+		return (left);
 
 	print_binary(array, left, right);
 	return (answer);
