@@ -34,21 +34,22 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 {
 	int answer;
 
-	if (left < right)
+	if (left <= right)
 	{
 		print_binary(array, left, right);
 		answer = left + (right - left) / 2;
 
-		if (array[answer] >= value)
-			return simple_binary(array, left, answer, value);
+		if (array[answer] == value)
+		{
+			print_binary(array, left, right);
+			return (answer);
+		}
 
-		return simple_binary(array, answer + 1, right, value);
+		if (array[answer] > value)
+			return(simple_binary(array, left, answer - 1, value));
+		return(simple_binary(array, left + 1, right, value));
 	}
 
-	if (array[left] == value)
-		return (left);
-
-	print_binary(array, left, right);
 	return (-1);
 }
 
