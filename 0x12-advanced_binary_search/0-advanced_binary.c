@@ -46,8 +46,8 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 		}
 
 		if (array[answer] > value)
-			return(simple_binary(array, left, answer - 1, value));
-		return(simple_binary(array, left + 1, right, value));
+			return (simple_binary(array, left, answer - 1, value));
+		return (simple_binary(array, answer + 1, right, value));
 	}
 
 	return (-1);
@@ -65,8 +65,9 @@ void print_binary(int *array, size_t left, size_t right)
 
 	while (left <= right)
 	{
-		printf("%i", array[left]);
-		if (left < right)
+		printf("%d", array[left]);
+
+		if (left != right)
 			printf(", ");
 		left++;
 	}
