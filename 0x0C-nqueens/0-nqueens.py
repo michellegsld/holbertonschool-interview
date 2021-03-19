@@ -3,6 +3,8 @@
 Task 0: N queens
 """
 
+import sys
+
 def canMove(final, row, column):
     """
     Checks if the queen would be able to move
@@ -43,7 +45,6 @@ def nqueens(final, column, checked_queens=[]):
     return checked_queens
 
 if __name__ == '__main__':
-    import sys
 
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
