@@ -5,13 +5,14 @@ Task 0: N queens
 
 import sys
 
+
 def canMove(final, row, column):
     """
     Checks if the queen would be able to move
     """
     rows = []
     columns = []
-    top_left =[]
+    top_left = []
     top_right = []
 
     for nums in final:
@@ -26,6 +27,7 @@ def canMove(final, row, column):
         return False
 
     return True
+
 
 def nqueens(final, column, checked_queens=[]):
     """
