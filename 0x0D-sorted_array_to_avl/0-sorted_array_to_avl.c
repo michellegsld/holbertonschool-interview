@@ -23,7 +23,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  * @parent_node: The node before the current one to be made
  * @start: The index in which to first look at when creating the node
  * @end: The last index in the array, which tells the function when to stop
- * 
+ *
  * Return: The pointer to the root node or NULL to end the recursion
  */
 avl_t *create_avl(int *array, avl_t *parent_node, int start, int end)
