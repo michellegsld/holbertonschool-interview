@@ -31,7 +31,7 @@ avl_t *create_avl(int *array, avl_t *parent_node, int start, int end)
 	avl_t *new_node;
 	int mid = (start + end) / 2;
 
-	if (start >= end)
+	if (start > end)
 		return (NULL);
 
 	new_node = malloc(sizeof(avl_t));
