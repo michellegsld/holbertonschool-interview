@@ -4,3 +4,4 @@
 | File Name | Description |
 | --------- | ----------- |
 | 0-heap_sort.c | **Task: 0. Heap sort** <br> A C function that sorts an array of integers in ascending order using the `sift-down` Heap Sort algorithm. Each time two elements are swapped, the `array` is printed. The prototype for this function is `void heap_sort(int *array, size_t size);`. |
+| 0-O | **Task: 0. Heap sort** <br> Contains the big O notations of the time complexity of the Heap sort algorithm in it's best, average, and worst case. |
