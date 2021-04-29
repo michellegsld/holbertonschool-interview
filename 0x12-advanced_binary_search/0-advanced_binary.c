@@ -50,7 +50,9 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 
 		if (array[answer] >= value)
 			return (simple_binary(array, left, answer, value));
-		return (simple_binary(array, answer + 1, right, value));
+
+		if (array[answer] <= value)
+			return (simple_binary(array, answer + 1, right, value));
 	}
 	return (-1);
 }
