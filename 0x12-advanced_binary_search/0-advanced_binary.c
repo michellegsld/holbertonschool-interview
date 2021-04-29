@@ -43,10 +43,7 @@ int simple_binary(int *array, size_t left, size_t right, int value)
 			return (-1);
 
 		if (array[answer] == value && array[answer - 1] != value)
-		{
-			print_binary(array, left, right);
 			return (answer);
-		}
 
 		if (array[answer] >= value)
 			return (simple_binary(array, left, answer, value));
