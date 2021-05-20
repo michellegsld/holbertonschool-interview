@@ -66,8 +66,8 @@ int only_digits(char *num)
 int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 {
 	char *num3;
-	int len3 = len1 + len2 + 1, sum = 0;
-	int i, j, carry = 0, digit1 = 0, digit2 = 0, test;
+	int len3 = len1 + len2 + 3, sum = 0;
+	int i, j, carry, digit1, digit2, inum3, jnum3 = 0;
 
 	num3 = malloc(len3 * sizeof(char));
 	if (num3 == NULL)
@@ -78,39 +78,24 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 		num3[i] = 0;
 	}
 
-	for (i = len1 - 1; i >= 0; i--, carry = 0)
+	for (i = len1 - 1; i >= 0; i--, carry = 0, jnum3++)
 	{
 		digit1 = num1[i] - '0';
+		inum3 = 0;
 
-		for (j = len2 - 1; j >= 0; j--)
+		for (j = len2 - 1; j >= 0; j--, inum3++)
 		{
 			digit2 = num2[j] - '0';
 
-			sum = digit1 * digit2 + num3[i + j] + carry;
-
-			printf("%d\n", sum);
+			sum = digit1 * digit2 + num3[inum3 + jnum3] + carry;
 
 			carry = sum / 10;
-			num3[i + j] = sum % 10;
-			for (test = 0; test <= len3; test++)
-			{
-				_putchar(num3[test] + '0');
-			}
-			printf("%s \t hi", num3);
+			num3[inum3 + jnum3] = sum % 10;
 		}
 
 		if (carry > 0)
-			num3[i + j] += carry;
+			num3[inum3 + jnum3] += carry;
 	}
-
-	printf("\n\n\n\n\n\n");
-	for (i = 0; i <= len3; i++)
-	{
-		_putchar(num3[i] + '0');
-	}
-	printf("%s \t hi", num3);
-	printf("\n\n\n\n\n\n");
-
 
 	for (i = len3; i >= 0 && num3[i] == 0; i--)
 	{
