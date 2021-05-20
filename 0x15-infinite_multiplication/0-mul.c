@@ -71,7 +71,10 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 
 	num3 = malloc(len3 * sizeof(char));
 	if (num3 == NULL)
+	{
+		free(num3);
 		_return_error();
+	}
 
 	for (i = 0; i < len3; i++)
 	{
