@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
 
 	len1 = only_digits(argv[1]);
 	len2 = only_digits(argv[2]);
-
-	return (_multiply(argv[1], len1, argv[2], len2));
+	_multiply(argv[1], len1, argv[2], len2);
+	return (0);
 }
 
 /**
@@ -67,7 +67,7 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 {
 	char *num3;
 	int len3 = len1 + len2 + 3, sum = 0;
-	int i, j, carry, digit1, digit2, inum3, jnum3 = 0;
+	int i = 0, j = 0, carry = 0, digit1, digit2, inum3 = 0, jnum3 = 0;
 
 	num3 = malloc(len3 * sizeof(char));
 	if (num3 == NULL)
