@@ -67,7 +67,7 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 {
 	char *num3;
 	int len3 = len1 + len2 + 1, sum = 0;
-	int i, j, carry = 0, digit1 = 0, digit2 = 0;
+	int i, j, carry = 0, digit1 = 0, digit2 = 0, test;
 
 	num3 = malloc(len3 * sizeof(char));
 	if (num3 == NULL)
@@ -92,6 +92,11 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 
 			carry = sum / 10;
 			num3[i + j] = sum % 10;
+			for (test = 0; test <= len3; test++)
+			{
+				_putchar(num3[test] + '0');
+			}
+			printf("%s \t hi", num3);
 		}
 
 		if (carry > 0)
@@ -99,7 +104,11 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 	}
 
 	printf("\n\n\n\n\n\n");
-	printf("%s", num3);
+	for (i = 0; i <= len3; i++)
+	{
+		_putchar(num3[i] + '0');
+	}
+	printf("%s \t hi", num3);
 	printf("\n\n\n\n\n\n");
 
 
