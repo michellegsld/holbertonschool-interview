@@ -103,6 +103,7 @@ int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 		{
 			_putchar('0');
 			_putchar('\n');
+			free(num3);
 			return (0);
 		}
 	}
