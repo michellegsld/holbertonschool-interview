@@ -30,12 +30,7 @@ int main(int argc, char *argv[])
  */
 void _return_error(void)
 {
-	_putchar('E');
-	_putchar('r');
-	_putchar('r');
-	_putchar('o');
-	_putchar('r');
-	_putchar('\n');
+	write(1, "Error\n", 6);
 	exit(98);
 }
 
@@ -71,7 +66,7 @@ int only_digits(char *num)
 int _multiply(char *num1, unsigned int len1, char *num2, unsigned int len2)
 {
 	char *num3;
-	int len3 = len1 + len2 + 3, sum = 0;
+	int len3 = len1 + len2 + 100, sum = 0;
 	int i, j, carry, digit1, digit2, inum3, jnum3 = 0;
 
 	num3 = malloc(len3 * sizeof(char));
