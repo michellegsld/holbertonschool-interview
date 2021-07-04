@@ -34,13 +34,15 @@ List *add_node_begin(List **list, char *str)
 		(*list)->prev = new_node;
 		*list = new_node;
 
-	} else {
+	}
+	else
+	{
 		*list = new_node;
 		new_node->next = new_node;
 		new_node->prev = new_node;
 	}
 
-	return new_node;
+	return (new_node);
 }
 
 /**
@@ -71,11 +73,13 @@ List *add_node_end(List **list, char *str)
 		new_node->prev = (*list)->prev;
 		((*list)->prev)->next = new_node;
 		(*list)->prev = new_node;
-	} else {
+	}
+	else
+	{
 		*list = new_node;
 		new_node->next = new_node;
 		new_node->prev = new_node;
 	}
 
-	return new_node;
+	return (new_node);
 }
