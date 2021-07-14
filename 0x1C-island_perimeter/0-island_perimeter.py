@@ -4,6 +4,7 @@
 Task 0: Island Perimeter
 """
 
+
 def island_perimeter(grid):
     """
     Returns the parameter of the island, defined by grid
